@@ -12,3 +12,5 @@ We do us our own fork of the qualysapi library as it is with the one we have tes
 * **[Qualys VM] I have locked my account due to too many bad attempts?**
 
 The account connection done in the Qualys Vulnerability Management module is managed by the qualysapi library dependency. We have had issues in the past in which the qualysapi was not correctly escaping symbols (e.g. $) or didn't work with the manager account but it did with a test read-only account. You might need to escape the symbols characters with a backslash.
+* **[Kibana's dashboard] Unable to fetch mapping. Do you have indices matching the pattern?**
+Troubleshooting this issue can be found [here](https://github.com/austin-taylor/VulnWhisperer/issues/83#issuecomment-406283999)
