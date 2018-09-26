@@ -15,3 +15,6 @@ The account connection done in the Qualys Vulnerability Management module is man
 * **[Kibana's dashboard] Unable to fetch mapping. Do you have indices matching the pattern?**
 
 Troubleshooting this issue can be found [here](https://github.com/austin-taylor/VulnWhisperer/issues/83#issuecomment-406283999).
+* **[Qualys VM] I'm trying to run Qualys VM module but I get `[FAIL] ERROR: no such child: count`?**
+
+You might be having enabled in your config file the [qualys] module (Qualys Web Scanner) instead of the [qualys_vuln] (Qualys Vulnerability Management).
