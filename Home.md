@@ -29,3 +29,6 @@ Troubleshooting this issue can be found [here](https://github.com/austin-taylor/
 * **[Kibana's Dashboard] Dashboard 'No results found'?**
 
 Kibana has its own `time picker` on top right, which by default has selected the last 15 minutes; this usually brings confusion making it seem that data failed to be feeded to ElasticSearch/Kibana. Change the time window (e.g to last 30 days) to check if it is a time window issue.
+* **[Kibana] Failing to find indexes (e.g. "risk_score") but reports ingested fine and visible at Kibana?**
+
+Make sure you are using the correct version of ELK, as 6 is not supported yet. This issue might be due to a configuration issue on the logstash config file, you might need to enable/uncomment certain lines.
