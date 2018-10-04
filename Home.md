@@ -32,3 +32,7 @@ Kibana has its own `time picker` on top right, which by default has selected the
 * **[Kibana] Failing to find indexes (e.g. "risk_score") but reports ingested fine and visible at Kibana?**
 
 Make sure you are using the correct version of ELK, as 6 is not supported yet. This issue might be due to a configuration issue on the logstash config file, you might need to enable/uncomment certain lines.
+* **[docker-compose][vulnwhisperer downloaded data] I followed all the steps to deploy the docker compose, but I am getting in Kibana a “Index Patterns: Please specify a default index pattern” error?**
+
+If you have a different paths for the scans data, you must be aware that the paths from the config files are pointing inside of the docker container, not your local host. This might be an issue when trying to point data from another folder.
+
