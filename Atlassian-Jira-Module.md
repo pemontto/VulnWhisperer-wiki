@@ -55,3 +55,5 @@ The module ignores tickets that have been closed that contain the labels either 
 
 ## Extras
 By matching with the scan_name, we can track down all the tickets that were reported from said scan even though they might have moved from Jira queue.
+
+Automatically updated tickets will also have added a "update" label to the ticket.
