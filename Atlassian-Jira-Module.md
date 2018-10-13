@@ -57,3 +57,5 @@ The module ignores tickets that have been closed that contain the labels either 
 By matching with the scan_name, we can track down all the tickets that were reported from said scan even though they might have moved from Jira queue.
 
 Automatically updated tickets will also have added a "update" label to the ticket.
+
+Tickets are being opened as type "Bug", which is [one of the default issue types from Jira](https://confluence.atlassian.com/adminjiracloud/issue-types-844500742.html).
