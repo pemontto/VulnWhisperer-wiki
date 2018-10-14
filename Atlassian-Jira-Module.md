@@ -53,6 +53,20 @@ Main function is sync(), which takes the vulnerability and Jira data for finish 
 ## Exceptions
 The module ignores tickets that have been closed that contain the labels either **risk_accepted** or **server_decomission**. This is so that teams can close tickets if they are not going to fix it and stop being bothered, but also allow the tracking of those issue for doing **Risk Assessment**.
 
+## Jira Sync structure
+The jira sync function requires the vulnerabilities to be sent as a list and have assets grouped by vulnerability. Each vulnerability needs the following fields:
+* source -> scanner which data is being parsed
+* scan_name -> specific scan_name being parsed
+* title -> vulnerability name
+* diagnosis -> vulnerability description
+* consequence -> threat that the vulnerability involves
+* solution -> solution to the specific vulnerability
+* ips -> assets affected
+* risk -> low, medium, high, critical
+* references -> any other references for the users to check
+
+All of these fields will come from the scanner results themselves, it is just needed to have them sent following this structure, so that data is already parsed when it arrives to the module, and the module strictly takes care for the Jira related tasks.
+
 ## Extras
 By matching with the scan_name, we can track down all the tickets that were reported from said scan even though they might have moved from Jira queue.
 
