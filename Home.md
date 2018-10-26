@@ -2,7 +2,9 @@ Welcome to the VulnWhisperer wiki!
 
 
 # FAQ
+* **[FAIL] Could not login to Nessus/Qualys?**
 
+If your password includes special characters, it might be possible that you need to escape that character within the password itself so that the scanner processes it and connects properly. Only do this if you are getting this issue, as each scanner has its own way of dealing with the connection and has its own dependencies.
 * **Is there a VulnWhisperer Dockerfile?**
 
 The official VulnWhisperer Dockerfile is maintained at [HASecuritySolutions/docker_vulnwhisperer](https://github.com/HASecuritySolutions/docker_vulnwhisperer). This one though at the moment is outdated and the currently supported is still at [qmontal/docker_vulnwhisperer](https://github.com/qmontal/docker_vulnwhisperer)'s fork, to be merged.
