@@ -12,7 +12,7 @@ The official VulnWhisperer Dockerfile is maintained at [HASecuritySolutions/dock
 
 This could be because the wrong qualysapi dependency it is installed; VulnWhisperer works with qualysapi version 3.5.0, fork created by Austin Taylor and copied into the VulnWhisperer in order to avoid extra external dependencies. 
 
-* **Why are you using a fork of qualysapi library?**
+* **[OLDER VERSIONS] Why are you using a fork of qualysapi library?**
 
 We do use our own fork of the qualysapi library as it is with the one working, the latest release from qualysapi has some changes that break authentication with Qualys and requires manual interaction.
 
