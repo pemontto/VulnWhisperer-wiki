@@ -26,6 +26,11 @@ The account connection done in the Qualys Vulnerability Management module is man
 * **[Qualys VM] I'm trying to run Qualys VM module but I get `[FAIL] ERROR: no such child: count`?**
 
 You might be having enabled in your config file the [qualys] module (Qualys Web Scanner) instead of the [qualys_vuln] (Qualys Vulnerability Management).
+* **[ALL SCANNERS][HTTP/S] I'm trying to run the scan module but VulnWhisperer is unable to connect?**
+
+It is possible that your scanner host doesn't support SSL and your host's URL is `http` instead of `https`. VulnWhisperer is expecting to work with `https`; in case you want to make your `http` scanner work with VulnWhisperer, for the moment you will have to go to the scanner module's code (e.g. for [nessus](https://github.com/HASecuritySolutions/VulnWhisperer/blob/master/vulnwhisp/frameworks/nessus.py#L39)), change the `https` to `http` and rebuild the VulnWhisperer package:
+
+```python setup.py clean --all && pip install -r requirements.txt && cd deps/qualysapi/ && python setup.py install && cd ../.. && python setup.py install && vuln_whisperer -c configs/template.ini```
 ## ELK Stack
 * **[Kibana's Dashboard] Unable to fetch mapping. Do you have indices matching the pattern?**
 
@@ -36,6 +41,9 @@ Kibana has its own `time picker` on top right, which by default has selected the
 * **[Kibana] Failing to find indexes (e.g. "risk_score") but reports ingested fine and visible at Kibana?**
 
 Make sure you are using the correct version of ELK, as 6 is not supported yet. This issue might be due to a configuration issue on the logstash config file, you might need to enable/uncomment certain lines.
+* **[ElasticSearch] "Max file descriptors [4096] for elasticsearch process is too low"**?
+
+Please refer to [this](https://github.com/HASecuritySolutions/VulnWhisperer/wiki/docker-compose-Instructions#elasticsearch-host-configuration).
 ## Docker/docker-compose
 * **Is there a VulnWhisperer Dockerfile?**
 
