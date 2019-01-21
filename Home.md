@@ -44,6 +44,10 @@ Make sure you are using the correct version of ELK, as 6 is not supported yet. T
 * **[ElasticSearch] "Max file descriptors [4096] for elasticsearch process is too low"**?
 
 Please refer to [this](https://github.com/HASecuritySolutions/VulnWhisperer/wiki/docker-compose-Instructions#elasticsearch-host-configuration).
+* **[Kibana] "Elasticsearch index not found: logstash-vulnwhisperer"?**
+
+Kibana needs to have at least one index that matches with the vulnwhisperer index (logstash-vulnwhisperer-*). If you go to `Kibana -> Management tab -> Index Patterns`, you will see that there is a `Create Index pattern` button. You can create an index pattern called `logstash-*` if you want, as it will already include the vulnwhisperer pattern.
+
 ## Docker/docker-compose
 * **Is there a VulnWhisperer Dockerfile?**
 
