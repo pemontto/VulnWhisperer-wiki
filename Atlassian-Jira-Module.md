@@ -75,3 +75,5 @@ Automatically updated tickets will also have added a "update" label to the ticke
 Tickets are being opened as type "Bug", which is [one of the default issue types from Jira](https://confluence.atlassian.com/adminjiracloud/issue-types-844500742.html).
 
 If vulnerable assets are too many, instead of posting all of them in the ticket description, a file is attached with all of the assets.
+
+*dns_resolv* is a variable on the Jira configuration, that allows you to enable the host resolution of the vulnerable assets using the VulnWhisperer host DNS for those assets without detected hostname.
