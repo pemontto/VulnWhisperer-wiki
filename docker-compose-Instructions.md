@@ -17,16 +17,6 @@ In order to work as expected, the docker-compose needs:
 - A logstash config file (stored at ./docker/logstash.yml)
 - ElasticSearch host configuration
 
-### Latest Dockerfile version
-Currently, the official VulnWhisperer Dockerfile is hosted [at SMAPPER's repo](https://github.com/HASecuritySolutions/docker_vulnwhisperer) (although outdated and broken due to docker layering inner workings), but the latest updated and stable Dockerfile image (Jira integration not yet included) is hosted [at qmontal's repo](https://github.com/qmontal/docker_vulnwhisperer).
-
-In order to build the latest Dockerfile before launching docker-compose, you will need to do the following commands:
-```shell
-wget https://raw.githubusercontent.com/qmontal/docker_vulnwhisperer/master/Dockerfile 
-docker build --no-cache -t hasecuritysolutions/docker_vulnwhisperer -f Dockerfile . --network=host
-```
-This will create the image hasecuritysolutions/docker_vulnwhisperer:latest from scratch with the latest updates. Will soon fix that with the next VulnWhisperer version.
-
 ### Local Storage "data"
 In order to have persistent data storage, a local volume is mapped both in VulnWhisperer and Logstash containers.
 
