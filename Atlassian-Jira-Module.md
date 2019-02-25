@@ -73,3 +73,5 @@ By matching with the scan_name, we can track down all the tickets that were repo
 Automatically updated tickets will also have added a "update" label to the ticket.
 
 Tickets are being opened as type "Bug", which is [one of the default issue types from Jira](https://confluence.atlassian.com/adminjiracloud/issue-types-844500742.html).
+
+If vulnerable assets are too many, instead of posting all of them in the ticket description, a file is attached with all of the assets.
