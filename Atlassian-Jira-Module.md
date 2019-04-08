@@ -14,7 +14,10 @@ The module works with the following scanners:
 * close tickets that have been solved
 * reopen closed tickets still unresolved
 * close obsolete tickets to get rid of old system's duplicates
-* The module is working with the following scanners:
+
+## Jira Workflow
+
+
 
 ## Module command
 `vuln_whisperer -c configs/frameworks_example.ini -s jira --source qualys_vuln -n "scan test"`
