@@ -17,7 +17,7 @@ The module works with the following scanners:
 
 ## Jira Workflow
 
-
+![Jira Workflow](https://github.com/HASecuritySolutions/VulnWhisperer/blob/beta-1.8/docs/source/jira_workflow.png)
 
 ## Module command
 `vuln_whisperer -c configs/frameworks_example.ini -s jira --source qualys_vuln -n "scan test"`
