@@ -5,9 +5,9 @@ To launch docker-compose, do:
 docker-compose -f docker-compose.yml up
 ```
 
-The VulnWhisperer container stops after ending the sync; in order to make vulnwhisperer run periodically, add to crontab the following:
+The VulnWhisperer container stops after ending the sync; in order to make vulnwhisperer run periodically, and only the vulnwhisperer code, add to crontab the following:
 ```shell
-0 8 * * * /usr/bin/docker-compose run vulnwhisp-vulnwhisperer
+0 8 * * * /usr/bin/docker-compose up vulnwhisp-vulnwhisperer
 ```
 
 ## Dependencies
@@ -57,7 +57,7 @@ This is solved in different ways on each OS, for more information please check h
 * If you are having issues with the connection between hosts, to troubleshoot them you can spawn a shell in said host doing the following:
 ```shell
 docker ps #check the images from the containers
-docker exec -i -t vulnwhisp-vulnwhisperer /bin/bash
+docker exec -i -t vulnwhisp-vulnwhisperer /bin/bash #where vulnwhisp-vulnwhisperer is the container name you want to troubleshoot
 ```
 You can also make sure that all ELK components are working by doing "curl -i host:9200 (elastic)/ host:5601 (kibana) /host:9600 (logstash). WARNING! It is possible that logstash is not exposing to the external network the port but it does to its internal docker network "esnet".
 * If Kibana is not showing the results, check that you are searching on the whole ES range, as by default it shows logs for the last 15 minutes (you can choose up to last 5 years)
